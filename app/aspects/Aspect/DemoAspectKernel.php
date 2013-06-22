@@ -6,6 +6,8 @@
  * @license       http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
+namespace Aspect;
+
 use Go\Core\AspectKernel;
 use Go\Core\AspectContainer;
 
@@ -14,17 +16,6 @@ use Go\Core\AspectContainer;
  */
 class DemoAspectKernel extends AspectKernel
 {
-
-    /**
-     * Returns the path to the application autoloader file, typical autoload.php
-     *
-     * @return string
-     */
-    protected function getApplicationLoaderPath()
-    {
-        return __DIR__.'/../../vendor/autoload.php';
-    }
-
     /**
      * Configure an AspectContainer with advisors, aspects and pointcuts
      *
@@ -34,6 +25,6 @@ class DemoAspectKernel extends AspectKernel
      */
     protected function configureAop(AspectContainer $container)
     {
-        $container->registerAspect(new Aspect\TestAspect());
+        $container->registerAspect(new TestAspect());
     }
 }
